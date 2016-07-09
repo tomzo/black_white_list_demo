@@ -1,0 +1,29 @@
+{
+  "name": "a_blacklisted_in_repos",
+  "group" : "pipelines",
+  "materials": [
+    {
+      "url": "https://github.com/djrice/black_white_list_demo",
+      "type": "git"
+    }
+  ],
+  "stages": [
+    {
+      "name": "say_hi",
+      "jobs": [
+        {
+          "name": "say_hi",
+          "tasks": [
+            {
+              "command": "echo",
+              "type": "exec",
+              "arguments": [
+                "hi"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
