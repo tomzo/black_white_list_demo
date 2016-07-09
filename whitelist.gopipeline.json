@@ -5,9 +5,8 @@
     {
       "url": "https://github.com/djrice/black_white_list_demo",
       "type": "git",
-      "invert_filter": true,
       "filter": {
-        "ignore": [
+        "whitelist": [
           "a/**/*.*"
         ] 
       }
