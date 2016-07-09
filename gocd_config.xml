@@ -1,0 +1,66 @@
+  <config-repos>
+    <config-repo plugin="json.config.plugin">
+      <git url="https://github.com/djrice/black_white_list_demo" />
+    </config-repo>
+  </config-repos>
+  <pipelines group="pipelines">
+    <pipeline name="baseline">
+      <materials>
+        <git url="https://github.com/djrice/black_white_list_demo.git" />
+      </materials>
+      <stage name="say_hi">
+        <jobs>
+          <job name="say_hi">
+            <tasks>
+              <exec command="echo">
+                <arg>hi</arg>
+              </exec>
+            </tasks>
+          </job>
+        </jobs>
+      </stage>
+    </pipeline>
+    <pipeline name="a_blacklisted">
+      <materials>
+        <git url="https://github.com/djrice/black_white_list_demo.git">
+          <filter>
+            <ignore pattern="a/**/*.*" />
+          </filter>
+        </git>
+      </materials>
+      <stage name="say_hi">
+        <jobs>
+          <job name="say_hi">
+            <tasks>
+              <exec command="echo">
+                <arg>hi</arg>
+              </exec>
+            </tasks>
+          </job>
+        </jobs>
+      </stage>
+    </pipeline>
+    <pipeline name="a_whitelisted">
+      <materials>
+        <git url="https://github.com/djrice/black_white_list_demo.git" invertFilter="true">
+          <filter>
+            <ignore pattern="a/**/*.*" />
+          </filter>
+        </git>
+      </materials>
+      <stage name="say_hi">
+        <jobs>
+          <job name="say_hi">
+            <tasks>
+              <exec command="echo">
+                <arg>hi</arg>
+              </exec>
+            </tasks>
+          </job>
+        </jobs>
+      </stage>
+    </pipeline>
+  </pipelines>
+
+
+Copyright © 2016 ThoughtWorks, Inc. Licensed under Apache License, Version 2.0. Go includes third-party software.Go Version: 16.7.0 (3671-501f5a3d3c9d88cac8eaf4026478e893f4c487bf)(cc) CCTray FeedAPIsPluginsCommunityServer DetailsNeed Help?
