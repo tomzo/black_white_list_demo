@@ -4,7 +4,12 @@
   "materials": [
     {
       "url": "https://github.com/djrice/black_white_list_demo",
-      "type": "git"
+      "type": "git",
+      "filter": {
+        "ignore": [
+          "a/**/*.*"
+        ] 
+      }
     }
   ],
   "stages": [
